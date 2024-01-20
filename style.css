@@ -1,0 +1,21 @@
+.square {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+#container {
+    display: flex;
+    max-width: 352px ;
+    flex-wrap: wrap;
+}
+
+#plan {
+    display: flex;
+    justify-content: center;
+}
+
+*{
+    border: 1px solid red;
+}
