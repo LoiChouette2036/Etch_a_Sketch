@@ -1,6 +1,7 @@
 //selection ID element where we put square
 var container = document.getElementById("container");
 
+
 let numberOfSquares = 16;
 
 for ( let j = 0 ; j < numberOfSquares ; j++) {

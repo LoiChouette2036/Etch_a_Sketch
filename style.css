@@ -1,6 +1,20 @@
-#plan {
+body {
+    height: 100vh;/*100% of window's height*/
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#up{
     display: flex;
     justify-content: center;
+}
+
+#mid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
 }
 
 .square {
@@ -13,6 +27,7 @@
 #container {
     display: flex;
     max-width: 352px ;
+    max-height: 352px;
     flex-wrap: wrap;
 }
 
@@ -28,6 +43,7 @@
     border-radius: 5px;
 }
 
-*{
+
+/*{
     border: 1px solid red;
-}
+}*/
