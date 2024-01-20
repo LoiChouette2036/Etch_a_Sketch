@@ -16,8 +16,18 @@
     flex-wrap: wrap;
 }
 
+.my_button {
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #3498db;
+    color: #3498db;
+    background-color: #fff;
+    border-radius: 5px;
+}
 
-
-/*{
+*{
     border: 1px solid red;
 }
