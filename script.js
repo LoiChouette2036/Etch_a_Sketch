@@ -38,6 +38,21 @@ function getRandomColor (){
     return 'rgb(' + red + ',' + green + ',' + blue + ')';
 }
 
+function areAllSquaresBlack() {
+    var squares = document.getElementsByClassName("square");
+
+    for (let k = 0; k < squares.length; k++) {
+        var currentColor = squares[k].style.backgroundColor.toLowerCase();
+
+        // check if color is really black or not (maybe "black" ou "#000000")
+        if (currentColor !== 'black' && currentColor !== '#000000') {
+            return false; // if one is not black
+        }
+    }
+
+    return true; // all are black
+}
+
 function darkenSquare(square){
     var hoverCount = 0;
     var isBlack = false;
@@ -54,6 +69,13 @@ function darkenSquare(square){
             hoverCount = 0;
             isBlack = true;
             square.style.backgroundColor = 'black';
+
+            if(areAllSquaresBlack()) {
+                alert("ALL squares are black!\nDo an other Game!\nClick on the Top Button");
+                
+
+            }
+
         } else {
             var currentColor = square.style.backgroundColor;
             var rgbValues = currentColor.match(/\d+/g);
