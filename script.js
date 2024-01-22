@@ -4,9 +4,15 @@ var container = document.getElementById("container");
 
 
 
-let numberOfSquares = 16;
+
 
 function creationSquare (numberOfSquares){
+    
+    // change the size of the container in order to make a beautiful square
+
+    container.style.maxWidth = (20*numberOfSquares)+ (2*numberOfSquares) + 'px';
+    container.style.maxHeight = (20*numberOfSquares)+(2*numberOfSquares) + 'px';
+
     for ( let j = 0 ; j < numberOfSquares ; j++) {
         for(let i = 0 ; i < numberOfSquares ; i++){
             // create a div element
@@ -22,7 +28,15 @@ function creationSquare (numberOfSquares){
     }
 }
 
-creationSquare(numberOfSquares);
+function getRandomColor (){
+    // generate random values for red, green, and blue
+    var red = Math.floor(Math.random() * 256);
+    var green = Math.floor(Math.random() * 256);
+    var blue = Math.floor(Math.random() * 256);
+
+    // return the RGB color as string
+    return 'rgb(' + red + ',' + green + ',' + blue + ')';
+}
 
 
 function game(){
@@ -35,13 +49,17 @@ function game(){
 
             console.log("hovered square");
 
-            squares[k].setAttribute('style','background-color: #FF0000;');
+            squares[k].setAttribute('style','background-color:' + getRandomColor() + ';');
         })
     }
 }
 
+
+let numberOfSquares = 16;
+creationSquare(numberOfSquares);
 game();
     
+
 var clickOnButton = document.querySelector('.my_button')
 
 clickOnButton.addEventListener('click', function (){
@@ -56,7 +74,7 @@ clickOnButton.addEventListener('click', function (){
 
         // erase the previous square.
         container.innerHTML = ''; 
-        
+
         creationSquare(userInput);
         game();
     }
