@@ -38,6 +38,38 @@ function getRandomColor (){
     return 'rgb(' + red + ',' + green + ',' + blue + ')';
 }
 
+function darkenSquare(square){
+    var hoverCount = 0;
+    var isBlack = false;
+
+    square.addEventListener("mouseover", function () {
+        // Si le carré est déjà noir, ne rien faire
+        if (isBlack) {
+            return;
+        }
+
+        hoverCount++;
+
+        if (hoverCount >= 10) {
+            hoverCount = 0;
+            isBlack = true;
+            square.style.backgroundColor = 'black';
+        } else {
+            var currentColor = square.style.backgroundColor;
+            var rgbValues = currentColor.match(/\d+/g);
+            var red = parseInt(rgbValues[0]);
+            var green = parseInt(rgbValues[1]);
+            var blue = parseInt(rgbValues[2]);
+
+            red = Math.floor(red * 0.9);
+            green = Math.floor(green * 0.9);
+            blue = Math.floor(blue * 0.9);
+
+            square.style.backgroundColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
+        }
+    });
+}
+
 
 function game(){
     //selection square element 
@@ -50,6 +82,7 @@ function game(){
             console.log("hovered square");
 
             squares[k].setAttribute('style','background-color:' + getRandomColor() + ';');
+            darkenSquare(squares[k]);
         })
     }
 }
