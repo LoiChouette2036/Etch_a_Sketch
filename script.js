@@ -2,6 +2,8 @@
 var container = document.getElementById("container");
 
 
+
+
 let numberOfSquares = 16;
 
 for ( let j = 0 ; j < numberOfSquares ; j++) {
@@ -33,3 +35,16 @@ for ( let k = 0 ; k < squares.length ;  k++ ){
     })
 }
     
+var clickOnButton = document.querySelector('.my_button')
+
+clickOnButton.addEventListener('click', function (){
+    console.log('button was clicked !');
+
+    var userInput = prompt("Entrer un chiffre entre 0 et 100");
+    if(userInput === null || isNaN(userInput) || userInput < 0 || userInput > 100 ){
+        console.log("Respect the rules if you want to play");
+        return 0;
+    } else {
+        console.log("you choose number : " + userInput )
+    }
+} )
